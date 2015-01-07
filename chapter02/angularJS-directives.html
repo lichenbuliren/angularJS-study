@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Directives-AngularJS</title>
+    <script src="http://cdn.bootcss.com/angular.js/1.1.0/angular.min.js"></script>
+</head>
+<body>
+<div  data-ng-init="names=['Jani','Hege','Kai']">
+    <ul>
+        <li data-ng-repeat="x in names">
+            {{ x }}
+        </li>
+    </ul>
+</div>
+
+<div data-ng-init="persions=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}]">
+    <ul>
+        <li data-ng-repeat="x in persions">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+</div>
+</body>
+</html>

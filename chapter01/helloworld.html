@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HelloWorld-AngularJS</title>
+    <script src="http://cdn.bootcss.com/angular.js/1.1.0/angular.min.js"></script>
+</head>
+<body>
+<!-- 使用'ng-app' 与 'data-ng-app' 是一样的效果，后者能兼容html5-->
+<!-- 'data-ng-init' 表示给定默认值-->
+<div data-ng-app="" data-ng-init="defaultName='Heaven'">
+    <p>Input something in the input box:</p>
+    <p>Name: <input type="text" data-ng-model="defaultName"></p>
+    <p data-ng-bind="defaultName"></p>
+</div>
+</body>
+</html>
