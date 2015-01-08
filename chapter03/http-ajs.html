@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HTTP-AngularJS</title>
+    <script src="http://cdn.bootcss.com/angular.js/1.1.0/angular.min.js"></script>
+</head>
+<body>
+
+<div data-ng-controller="customersController">
+    <ul>
+        <li data-ng-repeat="x in customers">
+            {{ x.Name + ',' + x.Country }}
+        </li>
+    </ul>
+</div>
+
+<script src="customersController.js"></script>
+</body>
+</html>

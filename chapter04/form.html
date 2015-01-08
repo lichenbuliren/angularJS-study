@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Form-AngularJS</title>
+    <script src="../bower_components/angular/angular.js"></script>
+</head>
+
+<body>
+<div ng-app="myApp" ng-controller="formController">
+    <form novalidate="" action="">
+        First Name: <br>
+        <input type="text" ng-model="user.firstName"/>
+        Last Name: <br/>
+        <input type="text" ng-model="user.lastName"/>
+        <br/><br/>
+        <button ng-click="reset()">RESET</button>
+    </form>
+    <p>form = {{ user }}</p>
+    <p>master = {{ master }}</p>
+</div>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("formController", function($scope) {
+        $scope.master = {firstName:'John',lastName:'Doe'};
+        $scope.reset = function () {
+            $scope.user = angular.copy($scope.master);
+        }
+        $scope.reset();
+    });
+</script>
+</body>
+</html>

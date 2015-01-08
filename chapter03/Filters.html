@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Filters-AngularJS</title>
+    <script src="http://cdn.bootcss.com/angular.js/1.1.0/angular.min.js"></script>
+</head>
+<body>
+<!--
+AngularJS Filters
+AngularJS filters can be used to transform data:
+
+Filter	    Description
+currency	Format a number to a currency format.
+filter	    Select a subset of items from an array.
+lowercase	Format a string to lower case.
+orderBy	    Orders an array by an expression.
+uppercase	Format a string to upper case.
+-->
+
+<!--A filter can be added to an expression with a pipe character (|) and a filter.-->
+<div data-ng-controller="personController">
+    <p>The fullName is {{ fullName() | uppercase}}</p>
+</div>
+
+<div data-ng-controller="costController">
+    <input type="text" data-ng-model="quantity"/><br/>
+    <input type="text" data-ng-model="price"/>
+    <p>Total = {{ total() | currency }}</p>
+</div>
+
+<div data-ng-controller="infoController">
+
+    <p><input type="text" ng-model="test"></p>
+    <ul>
+        <li data-ng-repeat="x in info | filter:test | orderBy: 'name'">
+            {{ (x.name | uppercase) + ',' + x.country }}
+        </li>
+    </ul>
+</div>
+
+<script src="personController.js"></script>
+<script src="costController.js"></script>
+<script src="infoController.js"></script>
+
+</body>
+</html>
