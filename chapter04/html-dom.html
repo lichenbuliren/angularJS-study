@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html data-ng-app="">
+<html ng-app="myApp">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Table-AngularJS</title>
-    <script src="http://cdn.bootcss.com/angular.js/1.1.0/angular.min.js"></script>
+    <script src="../public/libs/angularjs/angular.js"></script>
 </head>
 
 <body>
 <!--AngularJS 将checkbox的值绑定给 'mySwitch', button 根据 'mySwitch'来决定是否可用-->
-<p><button data-ng-disabled="mySwitch">Click ME!</button></p>
+<p>
+    <button data-ng-disabled="mySwitch">Click ME!</button>
+</p>
 <p><input type="checkbox" data-ng-model="mySwitch"/>Button</p>
 
 
 <p ng-show="true">I am visible.</p>
+
 <p ng-show="false">I am not visible.</p>
+
 <p ng-show="20 > 17">I am visible.</p>
 
 <div data-ng-controller="myController">
@@ -37,18 +41,21 @@
 
 </div>
 <script>
-    function myController($scope) {
-        $scope.count = 0;
-    }
 
-    function personController($scope) {
+    var myApp = angular.module('myApp', []);
+    myApp.controller('myController', function($scope) {
+        $scope.count = 0;
+    });
+
+    myApp.controller('personController', function($scope) {
         $scope.firstName = "John";
         $scope.lastName = "Doe";
         $scope.myVar = false;
-        $scope.toggle = function() {
+        $scope.toggle = function () {
             $scope.myVar = !$scope.myVar;
         };
-    }
+    });
+
 </script>
 </body>
 </html>
